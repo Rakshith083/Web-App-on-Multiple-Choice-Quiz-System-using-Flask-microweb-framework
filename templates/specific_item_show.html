@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  font-family: inherit;
+  margin: 0;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Products 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/BAT">BATS</a>
+      <a href="/BALL">BALL</a>
+      <a href="/WICKET">WICKETS</a>
+      <a href="/GLOVES">GLOVES</a>
+      <a href="/HELMET">HELMETS</a>
+      <a href="/KITBAG">KITBAGS</a>
+      <a href="/PAD">PADS</a>
+      <a href="/SHIRT">SHIRTS</a>
+      <a href="/PANT">PANTS</a>
+      <a href="/SHOES">SHOES</a>
+    </div>
+  </div> 
+  <a href="/myorders/{{acc}}">My orders</a>
+  <a href="/profileupdate/{{acc}}">Account update</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="/logout">Log out</a>
+</div>
+
+<h3 style="color: #333 ;">logged in as : {{acc}}</h3>
+<hr>
+<html>  
+<head>  
+    <title>YOUR FAVOUR</title>  
+</head>  
+<body>  
+    <form action="">
+                <h3 style="color: rgba(248, 4, 4, 0.973);">YOUR FAVOUR</h3>
+        <hr>
+            {% for row in r %}
+                {% for (col,i) in zip(row,a) %} 
+                    {{i}} : {{col}}<br>
+                {% endfor %}
+                <br>
+                <a href="/order/{{row[0]}}" style="text-decoration: none; color: blue;">BUY</a>
+                <hr>
+            {% endfor %}
+    </form>  
+</body>
+</html>
+
+</body>
+</html>

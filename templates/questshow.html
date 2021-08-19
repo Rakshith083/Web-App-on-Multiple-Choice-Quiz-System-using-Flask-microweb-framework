@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Question</title>
+    </head>
+    <body> 
+    <form action="/ans_varify" method="POST">
+        <h3>Question number : {{qstno}}</h3> 
+    <hr>
+        <h2 style="color: rgba(240, 11, 11, 0.945);">{{qus}}</h2><hr>
+        
+        <caption>Here the choices</caption>
+        <table>
+            <tr>
+                <td><input type="radio" name="answer" value="{{c1}}">
+                    <label for="{{c1}}">{{c1}}</label>
+                </td>
+                <td><input type="radio" name="answer" value="{{c2}}">
+                    <label for="{{c2}}">{{c2}}</label>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="answer" value="{{c3}}">
+                    <label for="{{c3}}">{{c3}}</label>
+                </td>
+                <td><input type="radio" name="answer" value="{{c4}}">
+                    <label for="{{c4}}">{{c4}}</label>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" name="" id="" value="Submit">
+    </form>
+    </body>
+</html>

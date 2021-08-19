@@ -1,0 +1,108 @@
+<html>  
+<head>  
+    <title>all items</title>  
+</head>  
+
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  font-family: inherit;
+  margin: 0;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+     <a href="/show">All Products</a>
+     <a href="/Appholder/BAT">BATS</a> 
+     <a href="/Appholder/BALL">BALLS</a> 
+     <a href="/Appholder/WICKET">WICKET</a> 
+     <a href="/Appholder/GLOVES">GLOVES</a> 
+     <a href="/Appholder/HELMET">HELMETS</a> 
+     <a href="/Appholder/KITBAG">KITBAGS</a> 
+     <a href="/Appholder/PAD">PADS</a> 
+     <a href="/Appholder/SHOES">SHOES</a> 
+</div>
+
+<form action="">
+    <h3 style="color: rgba(248, 4, 4, 0.973);">All Products</h3>
+<hr>
+{% for row in r %}
+{% for (col,i) in zip(row,a) %} 
+{{i}} : {{col}}<br>
+{% endfor %}
+<br>
+<a href="/update/{{row[0]}}" style="text-decoration: none; color: blue;">Update Now</a><br>
+<a href="/productdelete/{{row[0]}}" style="color: red;">Delete Product</a>
+<hr>
+{% endfor %}    
+</form>
+<a href="http://127.0.0.1:5000/bats/brands">BACK</a>
+
+</body>
+</html>
